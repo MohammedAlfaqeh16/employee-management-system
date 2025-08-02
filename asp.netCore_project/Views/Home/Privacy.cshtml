@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+    Layout = "_Layout";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-primary text-white text-center rounded-top-4">
+                    <h2 class="mb-0"><i class="bi bi-shield-lock"></i> Privacy Policy</h2>
+                </div>
+                <div class="card-body bg-light rounded-bottom-4">
+                    <p class="lead mb-3">
+                        Use this page to detail your site's privacy policy.
+                    </p>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">We respect your privacy and are committed to protecting your personal data.</li>
+                        <li class="list-group-item">Your information will not be shared with third parties without your consent.</li>
+                        <li class="list-group-item">All data is stored securely and used only for site functionality.</li>
+                    </ul>
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-outline-secondary rounded-pill px-4">
+                        <i class="bi bi-arrow-left-circle"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

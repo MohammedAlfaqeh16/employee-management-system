@@ -1,0 +1,60 @@
+﻿@model asp.netCore_project.Models.Employee
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Delete Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-danger text-white text-center rounded-top-4">
+                    <h4 class="mb-0"><i class="bi bi-trash"></i> Delete Employee</h4>
+                </div>
+                <div class="card-body bg-light rounded-bottom-4">
+                    <h3 class="mb-3 text-center">Are you sure you want to delete this employee?</h3>
+                    <dl class="row mb-4">
+                        <dt class="col-sm-4 fw-bold"><i class="bi bi-person"></i> Name</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.EmployeeName)</dd>
+                        <dt class="col-sm-4 fw-bold"><i class="bi bi-telephone"></i> Phone</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.EmployeePhone)</dd>
+                        <dt class="col-sm-4 fw-bold"><i class="bi bi-envelope"></i> Email</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.EmployeeEmail)</dd>
+                        <dt class="col-sm-4 fw-bold"><i class="bi bi-calendar"></i> Age</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.EmployeeAge)</dd>
+                        <dt class="col-sm-4 fw-bold"><i class="bi bi-currency-dollar"></i> Salary</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.EmployeeSalary)</dd>
+                    </dl>
+                    <form asp-action="Delete" id="deleteForm">
+                        <input type="hidden" asp-for="Id" />
+                        <button type="submit" class="btn btn-danger rounded-pill px-4">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4 ms-2">
+                            <i class="bi bi-arrow-left-circle"></i> Back to List
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('deleteForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (confirm('Are you sure you want to delete this employee?')) {
+                toastr.success('Employee deleted successfully!');
+                setTimeout(() => {
+                    e.target.submit();
+                }, 800);
+            } else {
+                toastr.info('Delete cancelled.');
+            }
+        });
+    </script>
+}

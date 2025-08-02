@@ -1,0 +1,83 @@
+﻿@model IEnumerable<roleViewModel>
+@{
+    ViewData["Title"] = "Add Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-action="AddRole" method="post" autocomplete="off" onsubmit="updatejsonFile()">
+<div class="row justify-content-center align-items-center min-vh-100 bg-light">
+    <div class="col-lg-5 col-md-7 col-12">
+        <div class="card shadow-lg border-0 rounded-4 p-4">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4 text-primary">
+                    <i class="bi bi-plus-circle me-2"></i>Add Role to User
+                </h2>
+                <h3 class="text-center mb-4 text-secondary">
+                        <i class="bi bi-person me-2"></i>@ViewBag.userName
+                    </h3>
+               
+
+                    <input hidden id="userName" name="userName" value="@ViewBag.userName" />
+                    <input hidden id="userId" name="userId" value="@ViewBag.userId" />
+                    <input hidden id="jsonRoles" name="jsonRoles" />
+                    
+
+                    <div class="container my-4">
+                        <h3 class="mb-3 text-primary"><i class="bi bi-shield-lock me-2"></i>Available Roles</h3>
+                        <table id="roleTable" class="table table-bordered table-hover shadow-sm rounded-4">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th scope="col">Role Id</th>
+                                    <th scope="col">Role Name</th>
+                                    <th scope="col" ></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                    @foreach (var role in Model)
+                                    {
+                                    <tr lass="table-primary">
+                                        <td class="tId">@role.roleId</td>
+                                        <td class="tName">@role.roleName</td>
+                                            <td >
+                                            <input type="checkbox" class=" tCheck form-check-input" @(role.useRole ? "checked" : "") />
+                                        </td>
+                                        </tr>
+                                    }
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                    <button type="submit" onclick="updatejsonFile()" class="btn btn-success w-100 rounded-pill">
+                        <i class="bi bi-plus-circle me-1"></i> save
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script>
+        function readTableToArr() {
+            var arr = [];
+            $("#roleTable tbody tr").each(function (index, data) {
+                const roleId = $(data).find(".tId").text().trim();
+                const roleName = $(data).find(".tName").text().trim();
+                const useRole = $(data).find(".tCheck").is(":checked");
+                arr.push({
+                    roleId: roleId,
+                    roleName: roleName,
+                    useRole: useRole
+                });
+            });
+            return JSON.stringify(arr);
+        }
+        function updatejsonFile() {
+            $("#jsonRoles").val(readTableToArr());
+        }
+
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}

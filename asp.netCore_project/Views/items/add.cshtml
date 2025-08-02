@@ -1,0 +1,78 @@
+﻿@model items
+
+@{
+    ViewData["Title"] = "Add Item";
+    Layout = "_Layout";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-primary text-white text-center rounded-top-4">
+                    <h4 class="mb-0"><i class="bi bi-box-seam"></i> Add New Item</h4>
+                </div>
+                <div class="card-body bg-light rounded-bottom-4">
+                    <form asp-controller="items" asp-action="add" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="All" class="alert alert-danger"></div>
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label fw-bold">Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-tag"></i></span>
+                                <input asp-for="Name" class="form-control" placeholder="Enter item name" />
+                            </div>
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Price" class="form-label fw-bold">Price</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+                                <input asp-for="Price" class="form-control" placeholder="Enter price" />
+                            </div>
+                            <span asp-validation-for="Price" class="text-danger small"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="CategoryId" class="form-label fw-bold">Category</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-tags"></i></span>
+                                <select asp-for="CategoryId" class="form-select" asp-items="@ViewBag.CategoryList">
+                                    
+                                </select>
+                            </div>
+                            <span asp-validation-for="CategoryId" class="text-danger small"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="clintfile" class="form-label fw-bold">Image</label>
+                            <input type="file" asp-for="clintfile" class="form-control" onchange="loadFile(event)" />
+                            <div class="mt-2 text-center">
+                                <img id="myImg" height="120" class="img-thumbnail border border-primary" style="max-width: 200px;" />
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-success btn-lg rounded-pill px-4">
+                                <i class="bi bi-plus-circle"></i> Add
+                            </button>
+                            <a href="@Url.Action("index", "items")" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+                                <i class="bi bi-arrow-left-circle"></i> Back to List
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        var loadFile = function(event){
+            var reader = new FileReader();
+            reader.onload = function(){
+                var myImg = document.getElementById('myImg');
+                myImg.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+}

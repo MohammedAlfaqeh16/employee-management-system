@@ -1,0 +1,80 @@
+﻿@model IEnumerable<items>
+
+@{
+    ViewData["Title"] = "Items List";
+    Layout = "_Layout";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0">
+                        <i class="bi bi-box-seam"></i> Items List
+                    </h3>
+                    <a href="@Url.Action("add", "items")" class="btn btn-success btn-lg rounded-pill">
+                        <i class="bi bi-plus-circle-fill"></i> Add Item
+                    </a>
+                </div>
+                <div class="card-body bg-light">
+                    <partial name="_Notifications" />
+                    @if (TempData["SuccessData"] != null)
+                    {
+                        <script type="text/javascript">
+                            toastr.success('@TempData["SuccessData"]');
+                        </script>
+                        <div class="alert alert-info text-center mt-4">
+                            @TempData["SuccessData"]
+                        </div>
+                    }
+                    <div class="table-responsive">
+                        @if (Model != null && Model.Any())
+                        {
+                            <table class="table table-hover align-middle rounded-3 overflow-hidden">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.Price</td>
+                                            <td>@item.Category?.Name</td>
+                                            <td>
+                                                <img src="~/images/@item.imagePath" style="width:48px " class="img-thumbnail border border-primary" alt="Item Image" />
+                                            </td>
+                                            <td>
+                                                <div class="d-flex gap-2">
+                                                    <a href="@Url.Action("Edite", "items", new { id = item.Id })" class="btn btn-outline-primary btn-sm rounded-pill">
+                                                        <i class="bi bi-pencil"></i> Edit
+                                                    </a>
+                                                    <a href="@Url.Action("Delate", "items", new { id = item.Id })" class="btn btn-outline-danger btn-sm rounded-pill">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <div class="alert alert-info text-center mt-4 rounded-3">
+                                No items found.
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

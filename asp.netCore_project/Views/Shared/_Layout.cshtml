@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - asp.netCore_project</title>
+    <link href="~/toastr.js/toastr.min.css" rel="stylesheet" />
+    <link href="~/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/asp.netCore_project.styles.css" asp-append-version="true" />
+</head>
+<body class="bg-light">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 mb-4 rounded-4">
+            <div class="container d-flex align-items-center justify-content-between">
+                <!-- Logo -->
+                <a class="navbar-brand fw-bold fs-3 text-primary d-flex align-items-center gap-2" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="bi bi-water"></i>
+                    <span>aspproject</span>
+                </a>
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+                    <ul class="navbar-nav mx-auto gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="bi bi-house-door me-1"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <i class="bi bi-shield-lock me-1"></i> Privacy
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="items" asp-action="index">
+                                <i class="bi bi-box-seam me-1"></i> Items
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Category" asp-action="index">
+                                <i class="bi bi-tags me-1"></i> Category
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Employees" asp-controller="Employees" asp-action="index">
+                                <i class="bi bi-people me-1"></i> Employees
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Roles" asp-action="index">
+                                <i class="bi bi-people me-1"></i> Edit Roles
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Search & Profile -->
+                <div class="d-flex align-items-center gap-3">
+                    @* <form class="d-flex" role="search" method="get" action="/Search">
+                        <input class="form-control rounded-pill me-2" type="search" placeholder="Search" aria-label="Search" name="q" style="width: 130px;">
+                        <button class="btn btn-outline-primary rounded-pill" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form> *@
+                    <div>
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="bg-white rounded-4 shadow-sm p-4 my-4">
+            <partial name="_Notifications" />
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer mt-auto py-3 bg-primary text-white-50 shadow-lg rounded-top-4">
+        <div class="container text-center">
+            <span class="fw-semibold fs-5">
+                &copy; 2025 - <span class="text-white">asp.netCore_project</span> -
+                <a class="text-info text-decoration-underline px-2 py-1 rounded-pill bg-opacity-10 bg-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </span>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/toastr.js/toastr.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(function () {
+            // يمكنك حذف هذا السطر أو تعديله حسب الحاجة
+            // toastr.success('مرحباً بك في موقعك!');
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
