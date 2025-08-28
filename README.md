@@ -51,12 +51,20 @@
 > يمكنك إضافة صور لواجهة المستخدم هنا لاحقًا عند رفعها على المستودع أو باستخدام روابط مباشرة.
 
 
-> <img width="1366" height="768" alt="‏‏لقطة الشاشة (41)" src="https://github.com/user-attachments/assets/5304b43e-2059-43bb-9f9f-f8ab03edca89" />
-<img width="1366" height="768" alt="‏‏لقطة الشاشة (46)" src="https://github.com/user-attachments/assets/d10eb2a7-021c-44b1-a451-f6f023cbb8f3" />
-<img width="1366" height="768" alt="‏‏لقطة الشاشة (45)" src="https://github.com/user-attachments/assets/ba999bac-371a-4fb2-a63c-9bf784b2138c" />
-<img width="1366" height="768" alt="‏‏لقطة الشاشة (44)" src="https://github.com/user-attachments/assets/51337342-e94f-49ed-bb3c-4577598b68c3" />
-<img width="1366" height="768" alt="‏‏لقطة الشاشة (43)" src="https://github.com/user-attachments/assets/bcf5ee81-bc18-4a85-9ab2-1ab549294097" />
-<img width="1366" height="768" alt="‏‏لقطة الشاشة (42)" src="https://github.com/user-attachments/assets/1b6d71c7-f738-44e6-9ee6-9922b88992b7" />
+> <img width="1366" height="768" alt="‏‏لقطة الشاشة (48)" src="https://github.com/user-attachments/assets/5304b43e-2059-43bb-9f9f-f8ab03edca89" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (49)" src="https://github.com/user-attachments/assets/d10eb2a7-021c-44b1-a451-f6f023cbb8f3" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (50)" src="https://github.com/user-attachments/assets/ba999bac-371a-4fb2-a63c-9bf784b2138c" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (51)" src="https://github.com/user-attachments/assets/51337342-e94f-49ed-bb3c-4577598b68c3" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (52)" src="https://github.com/user-attachments/assets/bcf5ee81-bc18-4a85-9ab2-1ab549294097" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (53)" src="https://github.com/user-attachments/assets/1b6d71c7-f738-44e6-9ee6-9922b88992b7" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (54)" src="https://github.com/user-attachments/assets/d10eb2a7-021c-44b1-a451-f6f023cbb8f3" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (55)" src="https://github.com/user-attachments/assets/ba999bac-371a-4fb2-a63c-9bf784b2138c" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (56)" src="https://github.com/user-attachments/assets/51337342-e94f-49ed-bb3c-4577598b68c3" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (57)" src="https://github.com/user-attachments/assets/bcf5ee81-bc18-4a85-9ab2-1ab549294097" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (58)" src="https://github.com/user-attachments/assets/1b6d71c7-f738-44e6-9ee6-9922b88992b7" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (59)" src="https://github.com/user-attachments/assets/bcf5ee81-bc18-4a85-9ab2-1ab549294097" />
+<img width="1366" height="768" alt="‏‏لقطة الشاشة (60)" src="https://github.com/user-attachments/assets/1b6d71c7-f738-44e6-9ee6-9922b88992b7" />
+
 
 
 ## 👨‍💻 المطور
